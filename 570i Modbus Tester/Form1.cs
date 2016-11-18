@@ -29,7 +29,7 @@ namespace _570i_Modbus_Tester
                 // configure serial port
                 port.BaudRate = 9600;
                 port.DataBits = 8;
-                port.Parity = Parity.None;
+                port.Parity = Parity.Even;
                 port.StopBits = StopBits.One;
                 port.Open();
 
@@ -38,8 +38,8 @@ namespace _570i_Modbus_Tester
 
                 //ushort[] ReadHoldingRegisters(
                 byte slaveId = 1;
-                ushort startAddress = 0;
-                ushort value = 10;
+                ushort startAddress = 60;
+                ushort value = 500;
                 master.WriteSingleRegister(slaveId, startAddress, value);
             }  
 
